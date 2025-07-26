@@ -4,77 +4,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flower Market</title>
-    <!-- Tailwind CSS CDN included -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Inter Font included -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- Font Awesome Icons included -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
         /* Set Inter as default font */
         body {
             font-family: 'Inter', sans-serif;
         }
-        /* No separate CSS needed for Trusted Seller Badge, Tailwind classes are used. */
+        
+        /* Spin animation for the trusted badge */
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .animate-spin-infinite {
+            animation: spin 3s linear infinite; /* Adjust duration as needed */
+        }
     </style>
 </head>
 <body class="font-sans antialiased text-gray-800 bg-orange-50">
 
-    <!-- Navigation Bar Section -->
     <header class="bg-white py-4 shadow-sm rounded-b-lg">
         <nav class="container mx-auto px-4 flex justify-between items-center">
-            <!-- Logo/Website Name -->
             <div class="flex items-center">
                 <a href="#" class="text-3xl font-bold text-gray-800 flex items-center rounded-lg">
-                    <!-- Logo image link. Add your own logo link here. -->
                     <img src="images/logo1.png" alt="Flower Market Logo" class="h-[70px] w-auto mr-2 rounded-lg">
-                    <!-- If you want text with the logo image, uncomment the line below -->
-                    <!-- Flower Market -->
-                </a>
+                    </a>
             </div>
             
-            <!-- Menu Items and Cart Icon -->
-            <!-- For Desktop: Menu and Cart will both be visible -->
-            <!-- For Mobile: Only Cart icon will be visible, menu will be hidden -->
             <div class="flex items-center space-x-6 md:space-x-8">
-                <!-- Menu Items (hidden on mobile, visible on desktop) -->
                 <a href="#" class="hidden md:block text-lg text-orange-600 hover:text-orange-700 font-medium transition duration-300">Home</a>
                 <a href="#" class="hidden md:block text-lg text-orange-600 hover:text-orange-700 font-medium transition duration-300">Shop</a>
                 <a href="#" class="hidden md:block text-lg text-orange-600 hover:text-orange-700 font-medium transition duration-300">About Us</a>
                 
-                <!-- Cart Icon (visible on both mobile and desktop) -->
                 <a href="#" class="text-lg text-orange-600 hover:text-orange-700 font-medium transition duration-300">
                     <i class="fa-solid fa-cart-shopping"></i>
-                    Cart (580 Taka) <!-- Amount will be shown if items are in cart -->
-                </a>
+                    Cart (580 Taka) </a>
             </div>
         </nav>
     </header>
 
-    <!-- Hero Section -->
     <section class="bg-orange-50 py-16 md:py-24 rounded-lg shadow-inner mt-4 mx-4">
         <div class="container mx-auto px-4 flex flex-col-reverse md:flex-row items-center justify-between">
-            <!-- Left content (below image on mobile) -->
-            <div class="md:w-1/2 text-center md:text-left mb-10 md:mb-0 p-4">
-                <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4">
+            <div class="md:w-1/2 text-left mb-10 md:mb-0 p-4"> <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4">
                     <span class="text-orange-600 block">Always Fresh</span>
                     <span class="text-orange-300 block">Flowers</span>
                 </h1>
-                <!-- Paragraph now explicitly left-aligned on all screen sizes -->
                 <p class="text-lg text-orange-600 leading-relaxed max-w-lg text-left mx-auto md:mx-0">
                     Indulge your senses with the beauty and fragrance of our fresh flower shop. From classic roses to exotic blooms, we offer a wide variety of fresh flowers that are perfect for any occasion. 
                 </p>
             </div>
             
-            <!-- Right image (above text on mobile) -->
             <div class="md:w-1/2 flex justify-center md:justify-end p-4">
-                <!-- Hero section image link. Add your own image link here. -->
                 <img src="images/hero-flower.png" alt="Beautiful Flower Arrangement" class="w-full max-w-md rounded-lg shadow-xl border-4 border-white">
             </div>
         </div>
     </section>
 
-    <!-- Our Plants Section -->
     <section class="py-16 md:py-24 bg-white mx-4 mt-8 rounded-lg shadow-lg">
         <div class="container mx-auto px-4 text-center">
             <h2 class="text-4xl font-extrabold text-orange-500 mb-6">Our Plants</h2>
@@ -82,117 +74,92 @@
                 Indulge your senses with the beauty and fragrance of our fresh flower shop. From classic roses to exotic blooms, we offer a wide variety of fresh flowers that are perfect for any occasion.
             </p>
 
-            <!-- Product Grid (2 columns on mobile, 4 columns on desktop) -->
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
-                <!-- Product Card 1 -->
                 <div class="bg-gray-50 rounded-xl shadow-md overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-xl border border-gray-200 flex flex-col">
-                    <!-- Placeholder for product image. Add your own image link here. -->
                     <img src="images/rose.jpg" alt="Plant 1" class="w-full h-48 md:h-64 object-cover rounded-t-xl">
                     <div class="p-4 md:p-6 flex flex-col flex-grow justify-between">
                         <div>
                             <h3 class="text-xl md:text-2xl font-semibold text-gray-900 mb-1 md:mb-2">Rose</h3>
                             <p class="text-gray-600 mb-3 md:mb-4 text-lg md:text-xl font-bold">170 Taka</p>
                         </div>
-                        <!-- Button size adjusted -->
-                        <button class="add-to-cart-btn w-full bg-orange-600 text-white py-2 px-6 rounded-lg hover:bg-orange-700 transition duration-300 shadow-md hover:shadow-lg text-base">ADD TO CART</button>
+                        <button class="add-to-cart-btn w-full bg-orange-600 text-white py-1.5 px-4 rounded-lg hover:bg-orange-700 transition duration-300 shadow-md hover:shadow-lg text-sm">ADD TO CART</button>
                     </div>
                 </div>
 
-                <!-- Product Card 2 -->
                 <div class="bg-gray-50 rounded-xl shadow-md overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-xl border border-gray-200 flex flex-col">
-                    <!-- Placeholder for product image. Add your own image link here. -->
                     <img src="images/rojonigondha.jpg" alt="Plant 2" class="w-full h-48 md:h-64 object-cover rounded-t-xl">
                     <div class="p-4 md:p-6 flex flex-col flex-grow justify-between">
                         <div>
                             <h3 class="text-xl md:text-2xl font-semibold text-gray-900 mb-1 md:mb-2">Rojonigondha</h3>
                             <p class="text-gray-600 mb-3 md:mb-4 text-lg md:text-xl font-bold">120 Taka</p>
                         </div>
-                        <!-- Button size adjusted -->
-                        <button class="add-to-cart-btn w-full bg-orange-600 text-white py-2 px-6 rounded-lg hover:bg-orange-700 transition duration-300 shadow-md hover:shadow-lg text-base">ADD TO CART</button>
+                        <button class="add-to-cart-btn w-full bg-orange-600 text-white py-1.5 px-4 rounded-lg hover:bg-orange-700 transition duration-300 shadow-md hover:shadow-lg text-sm">ADD TO CART</button>
                     </div>
                 </div>
 
-                <!-- Product Card 3 -->
                 <div class="bg-gray-50 rounded-xl shadow-md overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-xl border border-gray-200 flex flex-col">
-                    <!-- Placeholder for product image. Add your own image link here. -->
                     <img src="images/noyontara.webp" alt="Plant 3" class="w-full h-48 md:h-64 object-cover rounded-t-xl">
                     <div class="p-4 md:p-6 flex flex-col flex-grow justify-between">
                         <div>
                             <h3 class="text-xl md:text-2xl font-semibold text-gray-900 mb-1 md:mb-2">Noyontara</h3>
                             <p class="text-gray-600 mb-3 md:mb-4 text-lg md:text-xl font-bold">90 Taka</p>
                         </div>
-                        <!-- Button size adjusted -->
-                        <button class="add-to-cart-btn w-full bg-orange-600 text-white py-2 px-6 rounded-lg hover:bg-orange-700 transition duration-300 shadow-md hover:shadow-lg text-base">ADD TO CART</button>
+                        <button class="add-to-cart-btn w-full bg-orange-600 text-white py-1.5 px-4 rounded-lg hover:bg-orange-700 transition duration-300 shadow-md hover:shadow-lg text-sm">ADD TO CART</button>
                     </div>
                 </div>
 
-                <!-- Product Card 4 -->
                 <div class="bg-gray-50 rounded-xl shadow-md overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-xl border border-gray-200 flex flex-col">
-                    <!-- Placeholder for product image. Add your own image link here. -->
                     <img src="images/joba.jpg" alt="Plant 4" class="w-full h-48 md:h-64 object-cover rounded-t-xl">
                     <div class="p-4 md:p-6 flex flex-col flex-grow justify-between">
                         <div>
                             <h3 class="text-xl md:text-2xl font-semibold text-gray-900 mb-1 md:mb-2">joba</h3>
                             <p class="text-gray-600 mb-3 md:mb-4 text-lg md:text-xl font-bold">180 Taka</p>
                         </div>
-                        <!-- Button size adjusted -->
-                        <button class="add-to-cart-btn w-full bg-orange-600 text-white py-2 px-6 rounded-lg hover:bg-orange-700 transition duration-300 shadow-md hover:shadow-lg text-base">ADD TO CART</button>
+                        <button class="add-to-cart-btn w-full bg-orange-600 text-white py-1.5 px-4 rounded-lg hover:bg-orange-700 transition duration-300 shadow-md hover:shadow-lg text-sm">ADD TO CART</button>
                     </div>
                 </div>
 
-                <!-- Product Card 5 -->
                 <div class="bg-gray-50 rounded-xl shadow-md overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-xl border border-gray-200 flex flex-col">
-                    <!-- Placeholder for product image. Add your own image link here. -->
                     <img src="images/jasmine.jpg" alt="Plant 5" class="w-full h-48 md:h-64 object-cover rounded-t-xl">
                     <div class="p-4 md:p-6 flex flex-col flex-grow justify-between">
                         <div>
                             <h3 class="text-xl md:text-2xl font-semibold text-gray-900 mb-1 md:mb-2">Jasmine</h3>
                             <p class="text-gray-600 mb-3 md:mb-4 text-lg md:text-xl font-bold">90 Taka</p>
                         </div>
-                        <!-- Button size adjusted -->
-                        <button class="add-to-cart-btn w-full bg-orange-600 text-white py-2 px-6 rounded-lg hover:bg-orange-700 transition duration-300 shadow-md hover:shadow-lg text-base">ADD TO CART</button>
+                        <button class="add-to-cart-btn w-full bg-orange-600 text-white py-1.5 px-4 rounded-lg hover:bg-orange-700 transition duration-300 shadow-md hover:shadow-lg text-sm">ADD TO CART</button>
                     </div>
                 </div>
 
-                <!-- Product Card 6 -->
                 <div class="bg-gray-50 rounded-xl shadow-md overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-xl border border-gray-200 flex flex-col">
-                    <!-- Placeholder for product image. Add your own image link here. -->
                     <img src="images/kathgolap.jpg" alt="Plant 6" class="w-full h-48 md:h-64 object-cover rounded-t-xl">
                     <div class="p-4 md:p-6 flex flex-col flex-grow justify-between">
                         <div>
                             <h3 class="text-xl md:text-2xl font-semibold text-gray-900 mb-1 md:mb-2">Kathgolap</h3>
                             <p class="text-gray-600 mb-3 md:mb-4 text-lg md:text-xl font-bold">180 Taka</p>
                         </div>
-                        <!-- Button size adjusted -->
-                        <button class="add-to-cart-btn w-full bg-orange-600 text-white py-2 px-6 rounded-lg hover:bg-orange-700 transition duration-300 shadow-md hover:shadow-lg text-base">ADD TO CART</button>
+                        <button class="add-to-cart-btn w-full bg-orange-600 text-white py-1.5 px-4 rounded-lg hover:bg-orange-700 transition duration-300 shadow-md hover:shadow-lg text-sm">ADD TO CART</button>
                     </div>
                 </div>
 
-                <!-- Product Card 7 -->
                 <div class="bg-gray-50 rounded-xl shadow-md overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-xl border border-gray-200 flex flex-col">
-                    <!-- Placeholder for product image. Add your own image link here. -->
                     <img src="images/gendha.jpg" alt="Plant 7" class="w-full h-48 md:h-64 object-cover rounded-t-xl">
                     <div class="p-4 md:p-6 flex flex-col flex-grow justify-between">
                         <div>
                             <h3 class="text-xl md:text-2xl font-semibold text-gray-900 mb-1 md:mb-2">gendha</h3>
                             <p class="text-gray-600 mb-3 md:mb-4 text-lg md:text-xl font-bold">160 Taka</p>
                         </div>
-                        <!-- Button size adjusted -->
-                        <button class="add-to-cart-btn w-full bg-orange-600 text-white py-2 px-6 rounded-lg hover:bg-orange-700 transition duration-300 shadow-md hover:shadow-lg text-base">ADD TO CART</button>
+                        <button class="add-to-cart-btn w-full bg-orange-600 text-white py-1.5 px-4 rounded-lg hover:bg-orange-700 transition duration-300 shadow-md hover:shadow-lg text-sm">ADD TO CART</button>
                     </div>
                 </div>
 
-                <!-- Product Card 8 -->
                 <div class="bg-gray-50 rounded-xl shadow-md overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-xl border border-gray-200 flex flex-col">
-                    <!-- Placeholder for product image. Add your own image link here. -->
                     <img src="images/tulip.jpg" alt="Plant 8" class="w-full h-48 md:h-64 object-cover rounded-t-xl">
                     <div class="p-4 md:p-6 flex flex-col flex-grow justify-between">
                         <div>
                             <h3 class="text-xl md:text-2xl font-semibold text-gray-900 mb-1 md:mb-2">Tulip</h3>
                             <p class="text-gray-600 mb-3 md:mb-4 text-lg md:text-xl font-bold">320 Taka</p>
                         </div>
-                        <!-- Button size adjusted -->
-                        <button class="add-to-cart-btn w-full bg-orange-600 text-white py-2 px-6 rounded-lg hover:bg-orange-700 transition duration-300 shadow-md hover:shadow-lg text-base">ADD TO CART</button>
+                        <button class="add-to-cart-btn w-full bg-orange-600 text-white py-1.5 px-4 rounded-lg hover:bg-orange-700 transition duration-300 shadow-md hover:shadow-lg text-sm">ADD TO CART</button>
                     </div>
                 </div>
 
@@ -200,37 +167,31 @@
         </div>
     </section>
 
-    <!-- Flower & Plants Lover Section -->
     <div class="bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
-  <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-    
-    <!-- Image with badge -->
-    <div class="relative">
-      <img src="images/flower-store.png" alt="Flower Shop" class="rounded shadow-lg">
+        <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            
+            <div class="relative">
+                <img src="images/flower-store.png" alt="Flower Shop" class="rounded shadow-lg">
 
-      <!-- Trusted Badge -->
-      <img 
-        src="images/trusted-badge.png" 
-        alt="Trusted Seller" 
-        class="hidden sm:block absolute -top-[60px] -right-[150px] transform -translate-x-1/2 w-40 h-40"
-      >
-      <!-- Note: hidden on mobile (sm:block) + increased size to w-32 h-32 -->
+                <img 
+                    src="images/trusted-badge.png" 
+                    alt="Trusted Seller" 
+                    class="hidden sm:block absolute -top-[60px] -right-[100px] transform -translate-x-1/2 w-40 h-40 animate-spin-infinite"
+                >
+            </div>
+
+            <div>
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Flower & Plants Lover</h2>
+                <ul class="list-disc space-y-3 text-gray-700 pl-5">
+                    <li>Indulge your senses with the beauty and fragrance of our fresh flower shop. From classic roses to exotic blooms, we offer a wide variety of fresh.</li>
+                    <li>Immerse yourself in a vibrant world where every petal tells a story. From the timeless elegance of lilies to the captivating allure of orchids, our shop offers an exquisite selection of fresh, hand-picked flowers, perfect for any emotion or event.</li>
+                    <li>Elevate your everyday with the simple pleasure of fresh flowers. Whether you're seeking the cheerful charm of sunflowers or the serene beauty of hydrangeas, we provide a delightful assortment of natural splendor, ready to brighten your space and spirit.</li>
+                </ul>
+            </div>
+
+        </div>
     </div>
 
-    <!-- Text content -->
-    <div>
-      <h2 class="text-3xl font-bold text-gray-900 mb-4">Flower & Plants Lover</h2>
-      <ul class="list-disc space-y-3 text-gray-700 pl-5">
-        <li>Indulge your senses with the beauty and fragrance of our fresh flower shop. From classic roses to exotic blooms, we offer a wide variety of fresh.</li>
-        <li>Indulge your senses with the beauty and fragrance of our fresh flower shop. From classic roses to exotic blooms, we offer a wide variety of fresh.</li>
-        <li>Indulge your senses with the beauty and fragrance of our fresh flower shop. From classic roses to exotic blooms, we offer a wide variety of fresh.</li>
-      </ul>
-    </div>
-
-  </div>
-</div>
-
-    <!-- Latest Deals Section -->
     <section class="py-16 md:py-24 bg-gray-50 mx-4 mt-8 rounded-lg shadow-lg">
         <div class="container mx-auto px-4 text-center">
             <h2 class="text-4xl font-extrabold text-orange-500 mb-6">Latest Deals</h2>
@@ -239,9 +200,7 @@
             </p>
 
             <div class="flex flex-col md:flex-row gap-4">
-                <!-- Left small card container (vertical on mobile, left on desktop) -->
                 <div class="flex flex-col gap-4 md:w-1/2">
-                    <!-- Small Card 1 -->
                     <div class="relative w-full h-64 rounded-lg overflow-hidden shadow-md transform transition duration-300 hover:scale-105 hover:shadow-xl">
                         <img src="images/deal-bloom.png" alt="Bloom Plant" class="w-full h-full object-cover">
                         <div class="absolute inset-0 bg-black bg-opacity-40 flex flex-col items-center justify-center text-white p-4">
@@ -249,7 +208,6 @@
                             <a href="#" class="bg-orange-600 text-white py-2 px-6 rounded-lg hover:bg-orange-700 transition duration-300 text-lg font-semibold">Shop Now</a>
                         </div>
                     </div>
-                    <!-- Small Card 2 -->
                     <div class="relative w-full h-64 rounded-lg overflow-hidden shadow-md transform transition duration-300 hover:scale-105 hover:shadow-xl">
                         <img src="images/deal-ana.png" alt="Ana Plant" class="w-full h-full object-cover">
                         <div class="absolute inset-0 bg-black bg-opacity-40 flex flex-col items-center justify-center text-white p-4">
@@ -259,9 +217,7 @@
                     </div>
                 </div>
 
-                <!-- Right large card container (vertical on mobile, right on desktop) -->
                 <div class="md:w-1/2">
-                    <!-- Large Card -->
                     <div class="relative w-full h-[calc(2*16rem+1rem)] rounded-lg overflow-hidden shadow-md transform transition duration-300 hover:scale-105 hover:shadow-xl">
                         <img src="images/deal-zabo.png" alt="Zabo Plant" class="w-full h-full object-cover">
                         <div class="absolute inset-0 bg-black bg-opacity-40 flex flex-col items-center justify-center text-white p-4">
@@ -274,7 +230,6 @@
         </div>
     </section>
 
-    <!-- New Join the Colorful Bunch Section -->
     <section class="py-16 md:py-24 bg-cover bg-center text-white text-center mx-4 mt-8 rounded-lg shadow-lg" style="background-image: url('images/news-letter-bg.png');">
         <div class="container mx-auto px-4">
             <h2 class="text-4xl md:text-5xl font-extrabold mb-8">Join the Colorful Bunch</h2>
@@ -285,22 +240,18 @@
         </div>
     </section>
 
-    <!-- Footer Section (Updated) -->
     <footer class="bg-gray-100 text-gray-800 py-8 mt-8 rounded-t-lg">
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-left">
-                <!-- Logo and Description -->
                 <div class="md:col-span-1 flex flex-col items-start">
                     <a href="#" class="text-3xl font-bold text-gray-800 flex items-center mb-4">
                         <img src="images/logo1.png" alt="Flower Market Logo" class="h-[70px] w-auto mr-2 rounded-lg">
-                        <!-- Flower Market -->
-                    </a>
+                        </a>
                     <p class="text-gray-600 leading-relaxed">
                         Indulge your senses with the beauty and fragrance of our fresh flower shop.
                     </p>
                 </div>
 
-                <!-- Navigation Links -->
                 <div class="md:col-span-1">
                     <h3 class="text-xl font-semibold mb-4 text-orange-400">Company</h3>
                     <ul class="space-y-2">
@@ -312,7 +263,6 @@
                     </ul>
                 </div>
 
-                <!-- Feature Links -->
                 <div class="md:col-span-1">
                     <h3 class="text-xl font-semibold mb-4 text-orange-400">Features</h3>
                     <ul class="space-y-2">
@@ -324,7 +274,6 @@
                     </ul>
                 </div>
 
-                <!-- Social Media Icons -->
                 <div class="md:col-span-1 flex flex-col items-start">
                     <h3 class="text-xl font-semibold mb-4 text-orange-400">Social Media</h3>
                     <div class="flex space-x-4">
@@ -348,5 +297,7 @@
             </div>
         </div>
     </footer>
+
+   
 </body>
 </html>
